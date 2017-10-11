@@ -7,8 +7,8 @@
         <li class=""></li>
       </ol>
       <div class="carousel-inner" role="listbox">
-        <StartItem :is-active="state === STATES.GREETINGS" />
-        <QuestionItem :is-active="state === STATES.QUESTIONS" :question="quiz" />
+        <StartItem :is-active="state === STATES.GREETINGS" :on-complete="itemCompleteHandler" />
+        <QuestionItem :is-active="state === STATES.QUESTIONS" :question="quiz" :on-complete="itemCompleteHandler" />
         <ResultItem :is-active="state === STATES.RESULTS" />
       </div>
     </div>
@@ -28,6 +28,11 @@ export default {
     QuestionItem,
     ResultItem
   },
+  methods: {
+    itemCompleteHandler() {
+      this.state++;
+    }
+  },
   data() {
     return {
       STATES: {
@@ -36,6 +41,7 @@ export default {
         RESULTS: 2
       },
       state: 0,
+      answers: [],
       quiz: {
         title: "Do you brush your teeth everyday?",
         children: [

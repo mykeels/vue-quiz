@@ -9,31 +9,7 @@
 
 <script>
 export default {
-  props: {
-    question: {
-      default: () => ({
-        title: "One of the following is not like the others",
-        children: [
-          {
-            title: "Loch Ness Monster"
-          },
-          {
-            title: "Centaur"
-          },
-          {
-            title: "Dinosaur"
-          },
-          {
-            title: "Mermaid"
-          }
-        ]
-      }),
-      type: Object
-    },
-    isActive: {
-      type: Boolean
-    }
-  }
+  props: ['isActive', 'question', 'onComplete']
 }
 </script>
 
