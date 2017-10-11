@@ -9,7 +9,7 @@
       <div class="carousel-inner" role="listbox">
         <StartItem :is-active="state === STATES.GREETINGS" :on-complete="itemCompleteHandler" />
         <QuestionItem :is-active="state === STATES.QUESTIONS" :question="quiz" :on-complete="itemCompleteHandler" :on-answer="answerHandler" />
-        <ResultItem :is-active="state === STATES.RESULTS" />
+        <ResultItem :is-active="state === STATES.RESULTS" :on-complete="itemCompleteHandler" />
       </div>
     </div>
   </div>
@@ -30,7 +30,8 @@ export default {
   },
   methods: {
     itemCompleteHandler() {
-      this.state++;
+      if (this.state === this.STATES.RESULTS) this.state = this.STATES.GREETINGS
+      else this.state++;
     },
     answerHandler(info) {
       if (info) {
