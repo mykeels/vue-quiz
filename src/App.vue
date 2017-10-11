@@ -10,22 +10,6 @@
         <StartItem :is-active="false" />
         <QuestionItem :is-active="true" />
         <div class="item" height="600px">
-          <div class="quiz-question">Unicorns are real?</div>
-          <div class="quiz-answers">
-            <button class="quiz-button btn">True</button>
-            <button class="quiz-button btn">False</button>
-          </div>
-        </div>
-        <div class="item" height="600px">
-          <div class="quiz-question">What shade of white is this unicorn?</div>
-          <div class="quiz-answers">
-            <button class="quiz-button btn">Marshmallow</button>
-            <button class="quiz-button btn">Moon glow</button>
-            <button class="quiz-button btn">Egg shell</button>
-          </div>
-          <div class="question-image"><img class="img-responsive img-rounded" src="unicorn.jpg"></div>
-        </div>
-        <div class="item" height="600px">
           <h1 class="quiz-title">Wow you got a perfect score!</h1>
           <div class="results-ratio">You got 100% of the questions correct!</div>
           <div class="quiz-answers">
@@ -55,6 +39,39 @@ export default {
   components: {
     StartItem,
     QuestionItem
+  },
+  data() {
+    return {
+      questions: [{
+        title: "One of the following is not like the others",
+        children: [
+          {
+            title: "Loch Ness Monster"
+          },
+          {
+            title: "Centaur"
+          },
+          {
+            title: "Dinosaur"
+          },
+          {
+            title: "Mermaid"
+          }
+        ]
+      },
+      {
+        title: "Do you brush your teeth everyday?",
+        children: [
+          {
+            title: "Yes"
+          },
+          {
+            title: "No"
+          }
+        ]
+      }
+      ]
+    }
   }
 }
 </script>
