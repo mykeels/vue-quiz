@@ -20,6 +20,7 @@ import './App.css'
 import StartItem from './components/StartItem'
 import QuestionItem from './components/QuestionItem'
 import ResultItem from './components/ResultItem'
+import questions from './questions.json'
 
 export default {
   name: 'app',
@@ -41,48 +42,7 @@ export default {
     }
   },
   data() {
-    return {
-      STATES: {
-        GREETINGS: 0,
-        QUESTIONS: 1,
-        RESULTS: 2
-      },
-      state: 0,
-      answers: [],
-      quiz: {
-        title: "Do you brush your teeth everyday?",
-        children: [
-          {
-            title: "Yes",
-            question: {
-              title: "Do you use toothpaste?",
-              children: [
-                {
-                  title: "Yes"
-                },
-                {
-                  title: "No"
-                }
-              ]
-            }
-          },
-          {
-            title: "No",
-            question: {
-              title: "Do you know about plaque?",
-              children: [
-                {
-                  title: "Yes"
-                },
-                {
-                  title: "No"
-                }
-              ]
-            }
-          }
-        ]
-      }
-    }
+    return questions
   }
 }
 </script>
