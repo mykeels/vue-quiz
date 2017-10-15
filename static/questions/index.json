@@ -1,0 +1,50 @@
+{
+  "STATES": { "GREETINGS": 0, "QUESTIONS": 1, "RESULTS": 2 },
+  "state": 0,
+  "answers": [],
+  "quiz": {
+    "title": "Do you brush your teeth everyday?",
+    "children": [
+      {
+        "title": "Yes",
+        "question": "./static/questions/toothpaste.json"
+      },
+      {
+        "title": "No",
+        "question": {
+          "title": "Do you know about plaque?",
+          "children": [
+            { 
+              "title": "Yes",
+              "question": {
+                "title": "Would you say you tell people about plaque?",
+                "children": [
+                  {
+                    "title": "Sometimes"
+                  },
+                  {
+                    "title": "I never do"
+                  }
+                ]
+              }
+            }, 
+            { 
+              "title": "No",
+              "question": {
+                "title": "Do you want to have teeth at 40?",
+                "children": [
+                  {
+                    "title": "Yes"
+                  },
+                  {
+                    "title": "Who cares?"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

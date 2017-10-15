@@ -20,7 +20,7 @@ import './App.css'
 import StartItem from './components/StartItem'
 import QuestionItem from './components/QuestionItem'
 import ResultItem from './components/ResultItem'
-import questions from './questions.json'
+import questions from '../static/questions/index.json'
 
 export default {
   name: 'app',

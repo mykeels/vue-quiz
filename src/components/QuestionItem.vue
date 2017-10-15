@@ -21,13 +21,26 @@ export default {
         answer: answer
       })
       if (next) {
-        this.getCurrentQuestion = function () {
-          return next;
+        console.log(next);
+        if (typeof next === 'string') { //get questions from json file
+          this.$http.get(next).then((res) => {
+            this.getCurrentQuestion = function () {
+              return res.data;
+            }
+            this.$forceUpdate();
+          })
         }
-        console.log("next", next, this.getCurrentQuestion());
-        this.$forceUpdate();
+        else {
+          this.getCurrentQuestion = function () {
+            return next;
+          }
+          this.$forceUpdate();
+        }
       }
       else {
+        this.getCurrentQuestion = function () {
+          return this.question;
+        }
         this.onComplete();
       }
     }
