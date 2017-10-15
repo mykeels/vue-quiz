@@ -7,7 +7,7 @@
         <li class=""></li>
       </ol>
       <div class="carousel-inner" role="listbox">
-        <StartItem :is-active="state === STATES.GREETINGS" :on-complete="itemCompleteHandler" />
+        <StartItem :is-active="state === STATES.GREETINGS" :on-complete="itemCompleteHandler" :greeting="greeting" />
         <QuestionItem :is-active="state === STATES.QUESTIONS" :question="quiz" :on-complete="itemCompleteHandler" :on-answer="answerHandler" />
         <ResultItem :is-active="state === STATES.RESULTS" :on-complete="itemCompleteHandler" />
       </div>

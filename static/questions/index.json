@@ -2,6 +2,10 @@
   "STATES": { "GREETINGS": 0, "QUESTIONS": 1, "RESULTS": 2 },
   "state": 0,
   "answers": [],
+  "greeting": {
+    "text": "Let's talk teeth",
+    "actionText": "Okay, let's do this"
+  },
   "quiz": {
     "title": "Do you brush your teeth everyday?",
     "children": [
